@@ -1,0 +1,418 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Freight big pro";
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    background-color: #000000;
+}
+
+#loader{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    /* transition-delay: 0.5s; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99;
+    /* display: none; */
+
+}
+
+#yellow1{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-color: #F5E41B;
+    z-index: 8;
+}
+#yellow2{
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background-color: #F5E41B;
+    z-index: 7;
+}
+
+#loader video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 6;
+
+}
+
+#loader h1 {
+    font-size: 6.9vw;
+    font-weight: 100;
+    line-height: 5.5vw;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 9;
+    /* transition-delay: 0.5s; */
+     
+
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#page1 h1 {
+    font-size: 6.9vw;
+    font-weight: 100;
+    line-height: 5.5vw;
+    letter-spacing: -2px;
+
+
+}
+
+#nav{
+    position: absolute;
+    width: 100%;
+    /* background-color: red; */
+    z-index: 10;
+    padding: 30px 50px;
+}
+
+#nav svg path{
+    fill: #000000;
+}
+
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    
+
+}
+
+
+#elem{
+    /* background-color: red; */
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+#elem .moving .blur{
+    position: absolute;
+    width:35% ;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background:linear-gradient(#f5e31bda,#F5E41B,#f5e31bc0);
+    /* box-shadow: 10px 0px 20px 20px #F5E41B, -10px 0px 20px 20px #F5E41B; */
+    height: 100%;
+    z-index: 8;
+}
+
+#elem h2{
+    font-size: 7.5vw;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 100;
+    position: relative;
+    z-index: 9 ;
+    line-height: 5.5vw;
+    
+}
+
+#elem .moving{
+    background-color: #F5E41B;
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%) scaleY(0);
+    padding: 8px 0;
+    transition: all ease 0.5s;
+
+
+}
+#elem .moving .moving-in{
+ 
+ white-space: nowrap;
+ display: inline-block;
+ animation: moving;
+ animation-duration: 7.5s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+}
+
+#elem .moving .moving-in h5{
+    color: #000000;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: gilroy;
+    text-transform: uppercase;
+    margin-right: 35px;
+    transition: all ease 0.5s;
+    transition-delay: 0.1s;
+    opacity: 0;
+   }
+
+   @keyframes moving {
+
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+   }
+
+   #elem:hover .moving{
+    opacity: 1;
+    transform: translate(0,-50%) scaleY(1);
+   }
+
+   #elem:hover .moving h5{
+    opacity: 1;
+
+   }
+
+   #elem:hover h2{
+    font-style: italic;
+   }
+
+   #elem:hover h2{
+    font-style: italic;
+    color: black;
+    transition: ease 0.6s;
+   }
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+.image-container{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+
+}
+
+.image-div{
+    /* height: 38vw; */
+    width: 30vw;
+    /* background-color: red; */
+    position: relative;
+    overflow: hidden;
+    margin: 24px;
+
+}
+
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.4s;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #0000001e;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all ease 0.4s;
+    z-index: 9;
+}
+
+.overlay p{
+    font-size: 2.9vw;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2.1vw;
+    opacity: 0;
+    color: white;
+    transition: all ease 0.4s;
+    transition-delay: 0.1s;
+}
+
+.image-div:hover .overlay{
+    background-color: #000000;
+}
+
+.image-div:hover .overlay p{
+    opacity: 1;
+}
+
+.image-div:hover img{
+    scale: 1.1;
+}
+
+
+#footer{
+    height: 20vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+
+#footer #foot{
+    height:50%;
+    width: 100%;
+    background-color: #000000;
+}
+
+/* #footer h2{
+    font-family: gilroy;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1vw;
+    cursor: pointer;
+
+} */
+
+#foot{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#foot #socials{
+    display: flex;
+    gap: 10px;
+}
+
+#foot h3{
+    font-family: gilroy;
+    font-weight: 100;
+}
+
+#scrollup button {
+    width: 140px;
+    height: 56px;
+    overflow: hidden;
+    border: none;
+    color: black;
+    background: none;
+    position: relative;
+    padding-bottom: 2em;
+    cursor: pointer;
+  }
+  
+  #scrollup button > div,
+  #scrollup button > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  
+  #scrollup button:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: currentColor;
+    transition: transform 0.25s ease-out;
+  }
+  
+  #scrollup button:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  #scrollup button .clone > *,
+  #scrollup button .text > * {
+    opacity: 1;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    margin-left: 4px;
+  }
+  
+  #scrollup button .clone > * {
+    transform: translateY(60px);
+  }
+  
+  #scrollup button:hover .clone > * {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+  
+  #scrollup button:hover .text > * {
+    opacity: 1;
+    transform: translateY(-60px);
+    transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  }
+  
+  #scrollup button:hover .clone > :nth-child(1) {
+    transition-delay: 0.15s;
+  }
+  
+  #scrollup button:hover .clone > :nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  #scrollup button:hover .clone > :nth-child(3) {
+    transition-delay: 0.25s;
+  }
+  
+  #scrollup button:hover .clone > :nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  /* icon style and hover */
+  #scrollup button svg {
+    width: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-50deg);
+    transition: 0.2s ease-out;
+  }
+  
+  #scrollup button:hover svg {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  
